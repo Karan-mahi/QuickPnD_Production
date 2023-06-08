@@ -9,7 +9,6 @@ import Footer from "./Components/HomePage/Footer";
 
 
 const App = () => {
-  console.log(process.env.REACT_APP_BASE_URL); 
   return (
     <>
       <Navbar />
