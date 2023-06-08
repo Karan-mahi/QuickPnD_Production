@@ -1,5 +1,6 @@
 const axios = require("axios");
 const Order = require("../model/orderschema");
+const path = require("path");
 exports.getDistance = (req, res) => {
   const { source, destination, pickup, drop } = req.body;
   const arr = [
@@ -123,4 +124,8 @@ exports.addRoute = async (req, res) => {
     // console.log(error);
     return res.status(500).send(error);
   }
+};
+
+exports.default = async (req, res) => {
+  res.sendFile(path.resolve(__dirname,'..','build','index.html'));
 };
