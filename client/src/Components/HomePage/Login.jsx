@@ -27,7 +27,7 @@ export default function Login() {
     e.preventDefault();
     const email = user.loginEmail;
     const password = user.loginPassword;
-    const res = await fetch(`http://localhost:5000/auth/login`, {
+    const res = await fetch(`${process.env.REACT_APP_BASE_URL}/auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -51,7 +51,7 @@ export default function Login() {
     e.preventDefault();
     const { name, email, password, confirmPassword } = user;
     console.log(user);
-    const res = await fetch(`http://localhost:5000/auth/register`, {
+    const res = await fetch(`${process.env.REACT_APP_BASE_URL}/auth/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
