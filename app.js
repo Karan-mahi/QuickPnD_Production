@@ -4,18 +4,13 @@ const path = require("path");
 const app = express();
 const cors = require("cors");
 
-app.use(express.static(path.resolve(__dirname, './build')));
+app.use(express.static(path.resolve(__dirname, "./build")));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(
-    cors({
-      origin: "http://localhost:3000",
-      credentials: true,
-    })
-  );
+app.use(cors());
 
 ///Connecting Database
-require("./model/conn")
+require("./model/conn");
 
 app.use("/auth", require("./routes/auth"));
 app.use("/api", require("./routes/api"));
