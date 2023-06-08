@@ -23,7 +23,7 @@ function Form() {
     e.preventDefault();
     const { source, destination } = user;
 
-    const res = await fetch(`${process.env.REACT_APP_BASE_URL}/api/getSolutions`, {
+    const res = await fetch(`/api/getSolutions`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

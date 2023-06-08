@@ -32,7 +32,7 @@ const Publish = () => {
     e.preventDefault();
     const { name, source, destination } = user;
     console.log(user);
-    const res = await fetch(`${process.env.REACT_APP_BASE_URL}/addRoute`, {
+    const res = await fetch(`/addRoute`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
